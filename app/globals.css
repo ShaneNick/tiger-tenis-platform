@@ -7,8 +7,11 @@
 /*
  * TIGER TENNIS SHARED DESIGN SYSTEM
  *
- * This file is the visual source of truth shared by:
+ * Shared visual foundation for:
  * Admin, Coach, Parent, and Player experiences.
+ *
+ * Brand colors are derived from the existing
+ * Tiger Tennis Academy website.
  */
 
 @theme inline {
@@ -31,6 +34,11 @@
   /* Brand */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
+  --color-brand-green: var(--brand-green);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-navy: var(--brand-navy);
 
   /* Supporting surfaces */
   --color-secondary: var(--secondary);
@@ -91,157 +99,178 @@
 
 /*
  * LIGHT THEME
- * Primary Tiger Tennis appearance.
  */
 
 :root {
+  /*
+   * TIGER TENNIS BRAND
+   *
+   * These are kept as explicit brand tokens so the
+   * application can use the full Tiger Tennis identity
+   * without confusing brand colors with semantic states.
+   */
+  --brand-green: #00a63e;
+  --brand-coral: #e94d29;
+  --brand-blue: #052994;
+  --brand-navy: #031857;
+
   /* App foundation */
-  --background: #f6f7f4;
-  --foreground: #171a17;
+  --background: #f7f7f7;
+  --foreground: #121111;
 
   /* Elevated surfaces */
   --card: #ffffff;
-  --card-foreground: #171a17;
+  --card-foreground: #121111;
 
   --popover: #ffffff;
-  --popover-foreground: #171a17;
+  --popover-foreground: #121111;
 
   /*
-   * Primary brand/action color.
-   * Inspired by a tennis ball rather than generic SaaS blue.
+   * Primary application action.
+   *
+   * Tiger Tennis green becomes the primary action color.
    */
-  --primary: #8fd400;
-  --primary-foreground: #172000;
+  --primary: #00a63e;
+  --primary-foreground: #ffffff;
 
   /* Secondary surfaces */
-  --secondary: #f0f2ed;
-  --secondary-foreground: #262a26;
+  --secondary: #eeeeee;
+  --secondary-foreground: #121111;
 
-  --muted: #f0f2ed;
-  --muted-foreground: #6b706b;
+  --muted: #eeeeee;
+  --muted-foreground: #666666;
 
   /*
-   * Soft brand treatment.
-   * Useful for selected states, progress surfaces, etc.
+   * Soft interactive/selected surface.
+   *
+   * This remains deliberately subtle so the strong
+   * brand colors do not overwhelm operational screens.
    */
-  --accent: #e8f7c9;
-  --accent-foreground: #273800;
+  --accent: #e6ecfe;
+  --accent-foreground: #031857;
 
   /* Destructive/error */
-  --destructive: #c84a4a;
+  --destructive: #e94d29;
 
-  /* Positive/success */
-  --success: #e8f7c9;
-  --success-foreground: #365600;
+  /*
+   * Semantic states.
+   *
+   * Semantic meaning remains separate from the brand
+   * token names even when a brand color is reused.
+   */
+  --success: #00a63e;
+  --success-foreground: #ffffff;
 
-  /* Warning */
-  --warning: #fff1c7;
-  --warning-foreground: #755200;
+  --warning: #ffcc00;
+  --warning-foreground: #121111;
 
-  /* Informational */
-  --info: #e8eef8;
-  --info-foreground: #314765;
+  --info: #e6ecfe;
+  --info-foreground: #031857;
 
   /* Borders and controls */
-  --border: #e5e7e3;
-  --input: #dfe2dc;
-  --ring: #8fd400;
+  --border: #eeeeee;
+  --input: #d9d9d9;
+  --ring: #00a63e;
 
   /*
    * Data visualization palette.
-   * Deliberately contains multiple hues so charts do not
-   * depend on nearly identical greens.
+   *
+   * Uses the Tiger Tennis brand family first,
+   * followed by supporting colors.
    */
-  --chart-1: #8fd400;
-  --chart-2: #46745b;
-  --chart-3: #d4a63c;
-  --chart-4: #7186a6;
-  --chart-5: #a46b91;
+  --chart-1: #00a63e;
+  --chart-2: #052994;
+  --chart-3: #e94d29;
+  --chart-4: #ffcc00;
+  --chart-5: #8c8c8c;
 
   /*
-   * Dark navigation surface.
-   * Admin will use this heavily, but these remain
-   * part of the shared Tiger Tennis system.
+   * Navigation
+   *
+   * Uses Tiger Tennis near-black as the primary
+   * application navigation surface.
    */
-  --sidebar: #151815;
-  --sidebar-foreground: #f5f7f2;
+  --sidebar: #121111;
+  --sidebar-foreground: #ffffff;
 
-  --sidebar-primary: #8fd400;
-  --sidebar-primary-foreground: #172000;
+  --sidebar-primary: #00a63e;
+  --sidebar-primary-foreground: #ffffff;
 
-  --sidebar-accent: #252a25;
+  --sidebar-accent: #2b2a2a;
   --sidebar-accent-foreground: #ffffff;
 
-  --sidebar-border: #2c312c;
-  --sidebar-ring: #8fd400;
+  --sidebar-border: #444444;
+  --sidebar-ring: #00a63e;
 
-  /*
-   * Slightly rounded/premium UI.
-   */
   --radius: 0.75rem;
 }
 
 /*
  * DARK THEME
  *
- * Defined as part of the system now.
- * We are NOT implementing a theme toggle yet.
+ * Defined now so all shared components have a coherent
+ * dark palette. A theme toggle is not being implemented yet.
  */
 
 .dark {
-  --background: #111411;
-  --foreground: #f4f6f2;
+  --brand-green: #00a63e;
+  --brand-coral: #e94d29;
+  --brand-blue: #052994;
+  --brand-navy: #031857;
 
-  --card: #191d19;
-  --card-foreground: #f4f6f2;
+  --background: #121111;
+  --foreground: #ffffff;
 
-  --popover: #191d19;
-  --popover-foreground: #f4f6f2;
+  --card: #1c1b1b;
+  --card-foreground: #ffffff;
 
-  --primary: #9be315;
-  --primary-foreground: #172000;
+  --popover: #1c1b1b;
+  --popover-foreground: #ffffff;
 
-  --secondary: #252a25;
-  --secondary-foreground: #f1f3ef;
+  --primary: #00a63e;
+  --primary-foreground: #ffffff;
 
-  --muted: #222722;
-  --muted-foreground: #a6ada6;
+  --secondary: #2b2a2a;
+  --secondary-foreground: #ffffff;
 
-  --accent: #2c3820;
-  --accent-foreground: #c8f276;
+  --muted: #2b2a2a;
+  --muted-foreground: #b8b8b8;
 
-  --destructive: #e16a6a;
+  --accent: #031857;
+  --accent-foreground: #ffffff;
 
-  --success: #26381d;
-  --success-foreground: #c8f276;
+  --destructive: #ee785d;
 
-  --warning: #40371f;
-  --warning-foreground: #f6d980;
+  --success: #00a63e;
+  --success-foreground: #ffffff;
 
-  --info: #222d3b;
-  --info-foreground: #b8c9e1;
+  --warning: #ffcc00;
+  --warning-foreground: #121111;
 
-  --border: #303630;
-  --input: #353b35;
-  --ring: #9be315;
+  --info: #052994;
+  --info-foreground: #ffffff;
 
-  --chart-1: #9be315;
-  --chart-2: #71a889;
-  --chart-3: #e0b95e;
-  --chart-4: #8fa4c5;
-  --chart-5: #c287ad;
+  --border: #444444;
+  --input: #444444;
+  --ring: #00a63e;
 
-  --sidebar: #101310;
-  --sidebar-foreground: #f5f7f2;
+  --chart-1: #00a63e;
+  --chart-2: #5274dc;
+  --chart-3: #ee785d;
+  --chart-4: #ffcc00;
+  --chart-5: #8c8c8c;
 
-  --sidebar-primary: #9be315;
-  --sidebar-primary-foreground: #172000;
+  --sidebar: #121111;
+  --sidebar-foreground: #ffffff;
 
-  --sidebar-accent: #252a25;
+  --sidebar-primary: #00a63e;
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-accent: #2b2a2a;
   --sidebar-accent-foreground: #ffffff;
 
-  --sidebar-border: #2c312c;
-  --sidebar-ring: #9be315;
+  --sidebar-border: #444444;
+  --sidebar-ring: #00a63e;
 }
 
 /*
